@@ -1,0 +1,14 @@
+services:
+    php:
+        image: php:8.4-apache
+        ports:
+            - "8081:80"
+        volumes:
+            - ./html:/var/www/html
+    database:
+        image: mysql:latest
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: "mysql"
+            MYSQL_DATABASE: "greenfoot"
